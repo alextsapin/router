@@ -19,7 +19,6 @@
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-
 }
 
 .content{
@@ -27,6 +26,7 @@
     min-height: 400px;
     width: 70%;
     color: white;
+    font-size: 30px;
 }
 
 .footer {
