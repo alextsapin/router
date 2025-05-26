@@ -5,8 +5,11 @@ import { createBrowserRouter, RouterProvider, Route, Link } from "react-router-d
 import App from "./App";
 import { Error404 } from "./components/pages/Error404";
 import { Adidas } from "./components/pages/Adidas";
+import { PageTwo } from "./components/pages/Puma";
+import { PageThree } from "./components/pages/Abibas";
+import { Price } from "./components/pages/Price";
 
-const router = createBrowserRouter([
+export const router = createBrowserRouter([
     {
         path: "/",
         element: <App/>,
@@ -15,6 +18,18 @@ const router = createBrowserRouter([
             {
                 path: '/adidas',
                 element: <Adidas/>
+            },
+            {
+                path: '/puma',
+                element: <PageTwo/>
+            },
+            {
+                path: '/abibas',
+                element: <PageThree/>
+            },
+            {
+                path: '/prives',
+                element: <Price/>
             }
         ]
     },
