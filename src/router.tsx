@@ -1,35 +1,49 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 import * as React from "react";
-import { createRoot } from "react-dom/client";
-import { createBrowserRouter, RouterProvider, Route, Link } from "react-router-dom";
+import { createBrowserRouter, Navigate } from "react-router-dom";
+
 import App from "./App";
+import { Admin } from "./components/pages/Admin";
 import { Error404 } from "./components/pages/Error404";
 import { Adidas } from "./components/pages/Adidas";
-import { PageTwo } from "./components/pages/Puma";
-import { PageThree } from "./components/pages/Abibas";
+import { Puma } from "./components/pages/Puma";
+import { Nike } from "./components/pages/Nike";
 import { Price } from "./components/pages/Price";
+import { Model } from "./components/pages/Model";
+import { Protected } from "./components/pages/Protected";
 
 export const router = createBrowserRouter([
     {
         path: "/",
         element: <App/>,
-        errorElement: <Error404/>,
+        errorElement: <Navigate to='/error'/>,
         children: [
+            {
+                path: '/admin',
+                element: <Protected><Admin/></Protected>
+            },
             {
                 path: '/adidas',
                 element: <Adidas/>
             },
             {
                 path: '/puma',
-                element: <PageTwo/>
+                element: <Puma/>
             },
             {
-                path: '/abibas',
-                element: <PageThree/>
+                path: '/nike',
+                element: <Nike/>
             },
             {
-                path: '/prives',
+                path: '/prices',
                 element: <Price/>
+            },
+            {
+                path: '/:model/:id',
+                element: <Model/>
+            },
+            {
+                path: '/error',
+                element: <Error404/>
             }
         ]
     },

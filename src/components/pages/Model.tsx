@@ -5,8 +5,7 @@ import {adidasArr} from './Adidas';
 import { Error404 } from './Error404';
 
 export const Model = () => {
-
-
+    
     const {id} = useParams();
     const boot = adidasArr.find(b => b.id === Number(id))
 

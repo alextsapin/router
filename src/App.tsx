@@ -2,13 +2,7 @@
 import React, {lazy, useState} from 'react';
 import { Navigate, Outlet, Route, Routes } from 'react-router';
 import { NavLink } from 'react-router-dom';
-import { Error404 } from './components/pages/Error404';
-import { Adidas } from './components/pages/Adidas';
-import { PageThree } from './components/pages/Abibas';
-import { PageTwo } from './components/pages/Puma';
-import { Price } from './components/pages/Price';
 import styles from "./components/Site.module.css";
-import { Model } from './components/pages/Model';
 
 const App = () => {
     return (
